@@ -91,6 +91,87 @@ const cards = [{
     }
 
     },
+  {
+
+    cardName: 'Aranzulla',
+
+    cost: {
+      genericCostNumber: 3,
+      costFields: [ // colors array con riferimento a fieldCodes
+        fieldCodes[2],
+        fieldCodes[3]
+      ],
+    },
+
+    picture: 'images/g.png',  // da inserire immagine
+    cardType: cardTypes[1],
+    cardObject: 'Bear',
+
+    editionType: editions['BL'],
+
+    description: 'Lo sviluppatore guerriero spezza i byte in bit!',
+    story: 'Lo sviluppatore guerriero è una forma di essere umano evoluto.',
+
+    score: {
+      power: 5,  // r
+      toughness: 3
+    }
+
+    },
+  {
+
+    cardName: 'Monopattino',
+
+    cost: {
+      genericCostNumber: 3,
+      costFields: [ // colors array con riferimento a fieldCodes
+        fieldCodes[2],
+        fieldCodes[3]
+      ],
+    },
+
+    picture: 'images/g.png',  // da inserire immagine
+    cardType: cardTypes[1],
+    cardObject: 'Bear',
+
+    editionType: editions['BL'],
+
+    description: 'Lo sviluppatore guerriero spezza i byte in bit!',
+    story: 'Lo sviluppatore guerriero è una forma di essere umano evoluto.',
+
+    score: {
+      power: 5,  // r
+      toughness: 3
+    }
+
+    },
+  {
+
+    cardName: 'Trullo',
+
+    cost: {
+      genericCostNumber: 3,
+      costFields: [ // colors array con riferimento a fieldCodes
+        fieldCodes[2],
+        fieldCodes[3]
+      ],
+    },
+
+    picture: 'images/g.png',  // da inserire immagine
+    cardType: cardTypes[1],
+    cardObject: 'Bear',
+
+    editionType: editions['BL'],
+
+    description: 'Lo sviluppatore guerriero spezza i byte in bit!',
+    story: 'Lo sviluppatore guerriero è una forma di essere umano evoluto.',
+
+    score: {
+      power: 5,  // r
+      toughness: 3
+    }
+
+    },
 ]
 
 console.log(cards);
