@@ -50,7 +50,7 @@ const cards = [{
   },
 
   picture: 'images/i.png',
-  cardType: cardTypes[1],
+  cardType: cardTypes[2],
   cardObject: 'Bear',
 
   editionType: editions['BL'],
@@ -104,7 +104,7 @@ const cards = [{
     },
 
     picture: 'images/g.png',  // da inserire immagine
-    cardType: cardTypes[1],
+    cardType: cardTypes[5],
     cardObject: 'Bear',
 
     editionType: editions['BL'],
@@ -113,7 +113,7 @@ const cards = [{
     story: 'Lo sviluppatore guerriero è una forma di essere umano evoluto.',
 
     score: {
-      power: 5,  // r
+      power: 4,  // r
       toughness: 3
     }
 
@@ -131,7 +131,7 @@ const cards = [{
     },
 
     picture: 'images/g.png',  // da inserire immagine
-    cardType: cardTypes[1],
+    cardType: cardTypes[4],
     cardObject: 'Bear',
 
     editionType: editions['BL'],
@@ -140,7 +140,7 @@ const cards = [{
     story: 'Lo sviluppatore guerriero è una forma di essere umano evoluto.',
 
     score: {
-      power: 5,  // r
+      power: 1,  // r
       toughness: 3
     }
 
@@ -158,7 +158,7 @@ const cards = [{
     },
 
     picture: 'images/g.png',  // da inserire immagine
-    cardType: cardTypes[1],
+    cardType: cardTypes[3],
     cardObject: 'Bear',
 
     editionType: editions['BL'],
@@ -167,11 +167,20 @@ const cards = [{
     story: 'Lo sviluppatore guerriero è una forma di essere umano evoluto.',
 
     score: {
-      power: 5,  // r
+      power: 2,  // r
       toughness: 3
     }
 
     },
 ]
+
+const lista = document.getElementById('lista');
+cards.forEach((element) => {
+  lista.innerHTML+=`
+  <li>
+    ${element.cardName}
+  </li>
+  `
+});
 
 console.log(cards);
