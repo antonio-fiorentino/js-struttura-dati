@@ -183,10 +183,10 @@ function filterPower(powerValue, array){
 }
 
 function render(DOMElementId, array){
-  const lista = document.getElementById('lista');
-  // lista.innerHTML = '';
+  const lista = document.getElementById(DOMElementId);
+  lista.innerHTML = '';
 
-  cards.forEach((element) => {
+  array.forEach((element) => {
     lista.innerHTML+=`
     <li>
       ${element.cardName}
@@ -196,6 +196,7 @@ function render(DOMElementId, array){
 
 }
 
+render('lista', cards);
 
 function renderSelect(DOMElement, array){
   const select = document.getElementById(DOMElement);
@@ -212,9 +213,10 @@ $('#power').change(function(){
   if(isNaN($(this).val())){
     alert('Scegli un numero');
   }else{
+    console.log($(this).val());
     const selectValue= parseInt($(this).val());
     const filteredArray = filterPower(selectValue, cards);
-
+    console.log(filteredArray);
     render('lista', filteredArray);
 
   }
