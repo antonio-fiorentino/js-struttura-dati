@@ -6,7 +6,7 @@
 
 const fieldCodes = [
   'W', 'U', 'B', 'R', 'G'
-]
+];
 
 const cardTypes = [
   'terre',
@@ -15,8 +15,10 @@ const cardTypes = [
   'artefatti',
   'instantanei',
   'stregonerie'
-]
+];
 
+
+const valuePower = [1,2,3,4,5];
 // Abbiamo creato un oggetto di oggetti, come riferimento
 // di una edizione. Se ad esempio scrivo editions['SP']
 // allora otterrò tutto un oggetto che descrive
@@ -140,7 +142,7 @@ const cards = [{
     story: 'Lo sviluppatore guerriero è una forma di essere umano evoluto.',
 
     score: {
-      power: 1,  // r
+      power: 3,  // r
       toughness: 3
     }
 
@@ -167,20 +169,53 @@ const cards = [{
     story: 'Lo sviluppatore guerriero è una forma di essere umano evoluto.',
 
     score: {
-      power: 2,  // r
+      power: 3,  // r
       toughness: 3
     }
 
     },
 ]
 
-const lista = document.getElementById('lista');
-cards.forEach((element) => {
-  lista.innerHTML+=`
-  <li>
-    ${element.cardName}
-  </li>
-  `
-});
+function filterPower(powerValue, array){
+  return array.filter((element) =>{
+    return element.score.power === powerValue;
+  })
+}
 
-console.log(cards);
+function render(DOMElementId, array){
+  const lista = document.getElementById('lista');
+  // lista.innerHTML = '';
+
+  cards.forEach((element) => {
+    lista.innerHTML+=`
+    <li>
+      ${element.cardName}
+    </li>
+    `
+  });
+
+}
+
+
+function renderSelect(DOMElement, array){
+  const select = document.getElementById(DOMElement);
+
+  array.forEach((element)=>{
+    select.innerHTML+= `<option value="${element}"> ${element} </option>`
+  })
+}
+
+renderSelect('power', valuePower);
+
+
+$('#power').change(function(){
+  if(isNaN($(this).val())){
+    alert('Scegli un numero');
+  }else{
+    const selectValue= parseInt($(this).val());
+    const filteredArray = filterPower(selectValue, cards);
+
+    render('lista', filteredArray);
+
+  }
+})
